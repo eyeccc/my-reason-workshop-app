@@ -1,3 +1,12 @@
+/*open Emotion
+
+  let input = [%css [
+    width (`px 410);
+    height (`px 32);
+    paddingLeft (`px 8);
+    marginBottom
+  ]]*/
+
 let search = (searchList, term) =>
   searchList
   ->Belt.List.keep(it =>
@@ -27,7 +36,7 @@ let make = () => {
         )
       }
       value=name
-      placeholder="Filter by name..."
+      placeholder="Filter by name or tags..."
       onChange={event => ReactEvent.Form.target(event)##value |> setName}
     />
     <Places data=Data.places->search(name) />

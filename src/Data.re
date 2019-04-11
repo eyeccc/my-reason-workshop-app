@@ -28,6 +28,7 @@ type place = {
   email: option(string),
   coordinates: coord,
   tags: array(string),
+  description: string,
 };
 
 let places = [
@@ -47,6 +48,7 @@ let places = [
       lng: 121.565,
     },
     tags: [|"101"|],
+    description: "Taipei 101, sometimes stylized TAIPEI 101[1], formerly known as the Taipei World Financial Center – is a landmark supertall skyscraper in Xinyi District, Taipei, Taiwan. The building was officially classified as the world's tallest from its opening in 2004 until the 2010 completion of the Burj Khalifa in Dubai. Its elevators, capable of 60.6 km/h (37.7 mph) to transport passengers from the 5th to 89th floor in 37 seconds, set new records.[9] In 2011 Taipei 101 received a Platinum rating under the LEED certification system to become the tallest and largest green building in the world.[10][11] The structure regularly appears as an icon of Taipei in international media, and its fireworks displays are a regular feature of New Year's Eve broadcasts.",
   },
   {
     id: "1ef49b28-98b1-47e9-bcea-f54754c9c63a",
@@ -64,6 +66,7 @@ let places = [
       lng: 121.499444,
     },
     tags: [|"traditional"|],
+    description: "Mengjia Longshan Temple is a Chinese folk religious temple in Wanhua District (formerly known as Mengjia), Taipei, Taiwan. The temple was built in Taipei in 1738 by settlers from Fujian during Qing rule in honor of Guanyin. It served as a place of worship and a gathering place for the Chinese settlers. In addition to its Buddhist elements, it includes halls and altars to Chinese deities such as Mazu and Guan Yu.",
   },
   {
     id: "f185c339-eb12-4223-8996-4ba9bfff935b",
@@ -81,6 +84,7 @@ let places = [
       lng: 121.572639,
     },
     tags: [|"eat", "food"|],
+    description: "The Raohe Street Night Market is one of the oldest night markets in Songshan District, Taipei, Taiwan.",
   },
   /*{
       id: "51641447-c00e-4543-823b-f5a19864a47c",
