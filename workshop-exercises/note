@@ -1,0 +1,13 @@
+in js
+
+let state = {
+  loading: true,
+  error: true, // which is illegal state
+  ...
+}
+
+in reasonml
+
+you can use pattern matching!
+
+https://github.com/nikgraf/reasonconf-workshop
