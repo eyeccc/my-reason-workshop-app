@@ -4,7 +4,7 @@ let make = (~data: list(Data.place)) =>
   ->Belt.List.map(it
       /* can also write (it: Data.place) to fix inference*/
       =>
-        <a href={"#" ++ it.route}>
+        <a key={it.id} href={"#" ++ it.route}>
           <div
             key={it.id}
             style={

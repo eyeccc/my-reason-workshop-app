@@ -37,7 +37,7 @@ let taipei101 = {
   route: "taipei-101",
   image: {
     url: "https://images.unsplash.com/photo-1549001364-6495e461f87c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
-    attribution: "by Timo Volz",
+    attribution: "Timo Volz",
     attributionUrl: Some("https://unsplash.com/@magict1911"),
   },
   address: "No. 7, Section 5, Xinyi Road, Xinyi District, Taipei City, Taiwan 110",
@@ -57,7 +57,7 @@ let nightMarket = {
   route: "nightmarket",
   image: {
     url: "https://images.unsplash.com/photo-1552912810-e184f878293e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1466&q=80",
-    attribution: "by Vernon Raineil Cenzon",
+    attribution: "Vernon Raineil Cenzon",
     attributionUrl: Some("https://unsplash.com/@thevernon"),
   },
   address: "Raohe Street, Songshan District, Taipei City, Taiwan 105",
@@ -77,7 +77,7 @@ let temple = {
   route: "lungshan-temple",
   image: {
     url: "https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
-    attribution: "by Charles Postiaux",
+    attribution: "Charles Postiaux",
     attributionUrl: Some("https://unsplash.com/@charlpost"),
   },
   address: "No. 211, Guangzhou Street, Wanhua District, Taipei City, Taiwan 10853",
