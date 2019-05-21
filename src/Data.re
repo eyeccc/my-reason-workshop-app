@@ -90,4 +90,33 @@ let temple = {
   tags: [|"traditional"|],
   description: "Mengjia Longshan Temple is a Chinese folk religious temple in Wanhua District (formerly known as Mengjia), Taipei, Taiwan. The temple was built in Taipei in 1738 by settlers from Fujian during Qing rule in honor of Guanyin. It served as a place of worship and a gathering place for the Chinese settlers. In addition to its Buddhist elements, it includes halls and altars to Chinese deities such as Mazu and Guan Yu.",
 };
-let places = [taipei101, temple, nightMarket];
+
+let teapotMt = {
+  id: "b2efbaca-9810-49a3-9de3-918098dbb510",
+  name: "Teapot Mountain",
+  route: "teapotMt",
+  image: {
+    url: "https://images.unsplash.com/photo-1512990419428-7a0eee50a9a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2853&q=80",
+    attribution: "Andrew Haimerl",
+    attributionUrl: Some("https://unsplash.com/@andrew_haimerl"),
+  },
+  address: "224, New Taipei City, Ruifang District",
+  phone: None,
+  email: None,
+  coordinates: {
+    lat: 25.1095149,
+    lng: 121.8620051,
+  },
+  tags: [|"nature", "hiking"|],
+  description: "
+This strangely shaped hill, as its name suggests, looks like a teapot without a handle,
+sometimes referred to as the \"Tea Hill\", but in another angle,
+it looks like a lion, so it is also called \"Lion Rock Mountain\".
+It is not high and the top of the mountain is not large, but after climbing the teapot mountain,
+the surrounding Yinyang Sea, Keelung Mountain, Shuiyu Cave and Jinguashi are all unobstructed.
+If you want to look carefully at the northeast coast, this is a great place.
+Every step of the earless teapot has an amazing scenery, and there are also many pavilions along the way, allowing people to enjoy the beauty of the mountains and the sea.
+Every autumn and winter is the most popular season for the earless teapot mountain trail, with the warm sunshine, the cool atmosphere and the silvergrass flowers in the mountains.",
+};
+
+let places = [taipei101, temple, nightMarket, teapotMt];

@@ -1,11 +1,17 @@
-/*open Emotion
+module Styles = {
+  open Emotion;
 
-  let input = [%css [
-    width (`px 410);
-    height (`px 32);
-    paddingLeft (`px 8);
-    marginBottom
-  ]]*/
+  let searchBar = [%css
+    [
+      width(`px(410)),
+      height(`px(32)),
+      paddingLeft(`px(8)),
+      marginBottom(`px(20)),
+    ]
+  ];
+};
+
+let getPlace = route => Data.places->Belt.List.getBy(p => p.route == route);
 
 let search = (searchList, term) =>
   searchList
@@ -24,23 +30,14 @@ let search = (searchList, term) =>
 let make = () => {
   let (name, setName) = React.useState(() => "");
   let url = ReasonReactRouter.useUrl();
-  switch (url.hash) {
-  | "taipei-101" => <Detail data=Data.taipei101 />
-  | "lungshan-temple" => <Detail data=Data.temple />
-  | "nightmarket" => <Detail data=Data.nightMarket />
-  | _ =>
+  let currentRoute = getPlace(url.hash);
+  switch (currentRoute) {
+  | Some(data) => <Detail data />
+  | None =>
     <div style={ReactDOMRe.Style.make(~width="50%", ~margin="auto", ())}>
       <h1> {ReasonReact.string("Taipei")} </h1>
       <input
-        style={
-          ReactDOMRe.Style.make(
-            ~width="410px",
-            ~height="32px",
-            ~paddingLeft="8px",
-            ~marginBottom="20px",
-            (),
-          )
-        }
+        className=Styles.searchBar
         value=name
         placeholder="Filter by name or tags..."
         onChange=(event => ReactEvent.Form.target(event)##value |> setName)

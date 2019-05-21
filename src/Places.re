@@ -1,3 +1,33 @@
+module Styles = {
+  open Emotion;
+
+  let placeBlock = [%css
+    [
+      width(`px(420)),
+      height(`px(280)),
+      marginBottom(`px(20)),
+      padding2(`px(20), `px(20)),
+      position(`relative),
+      color(`hex("fff")),
+    ]
+  ];
+
+  let tags = [%css
+    [
+      backgroundColor(`hex("808080")),
+      opacity(0.7),
+      marginRight(`px(8)),
+      padding4(`px(2), `px(2), `px(2), `px(2)),
+      color(`hex("fff")),
+      borderRadius(`px(5)),
+    ]
+  ];
+
+  let tagWrapper = [%css
+    [position(`absolute), bottom(`px(50)), right(`px(50))]
+  ];
+};
+
 [@react.component]
 let make = (~data: list(Data.place)) =>
   data
@@ -7,46 +37,20 @@ let make = (~data: list(Data.place)) =>
         <a key={it.id} href={"#" ++ it.route}>
           <div
             key={it.id}
+            className=Styles.placeBlock
             style={
               ReactDOMRe.Style.make(
-                /* TODO: change to classname */
-                ~width="420px",
-                ~height="280px",
                 ~backgroundImage="url(" ++ it.image.url ++ ")",
                 ~backgroundSize="420px 280px",
                 ~backgroundRepeat="no-repeat",
-                ~color="white",
-                ~padding="20px 20px",
-                ~marginBottom="20px",
-                ~position="relative",
                 (),
               )
             }>
             {ReasonReact.string(it.name)}
-            <div
-              style={
-                ReactDOMRe.Style.make(
-                  ~position="absolute",
-                  ~bottom="50px",
-                  ~right="50px",
-                  (),
-                )
-              }>
+            <div className=Styles.tagWrapper>
               {
                 Belt.Array.map(it.tags, it =>
-                  <span
-                    key=it
-                    style={
-                      ReactDOMRe.Style.make(
-                        ~backgroundColor="grey",
-                        ~color="white",
-                        ~padding="2px 2px 2px 2px",
-                        ~opacity="0.7",
-                        ~borderRadius="5px",
-                        ~marginRight="8px",
-                        (),
-                      )
-                    }>
+                  <span key=it className=Styles.tags>
                     {it |> ReasonReact.string}
                   </span>
                 )

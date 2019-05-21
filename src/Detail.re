@@ -1,7 +1,13 @@
+module Styles = {
+  open Emotion;
+
+  let descriptionText = [%css [width(`px(500))]];
+};
+
 [@react.component]
 let make = (~data: Data.place) =>
   <div style={ReactDOMRe.Style.make(~width="50%", ~margin="auto", ())}>
-    <a href="#"> {"Back" |> ReasonReact.string} </a>
+    <a href="#"> <h1> {ReasonReact.string("<<")} </h1> </a>
     <h1> {ReasonReact.string(data.name)} </h1>
     <img
       style={ReactDOMRe.Style.make(~width="500px", ())}
@@ -13,7 +19,7 @@ let make = (~data: Data.place) =>
         {data.image.attribution |> ReasonReact.string}
       </a>
     </footer>
-    <p style={ReactDOMRe.Style.make(~width="500px", ())}>
+    <p className=Styles.descriptionText>
       {ReasonReact.string(data.description)}
     </p>
     <a
